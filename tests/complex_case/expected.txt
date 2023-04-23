@@ -1,0 +1,19 @@
+graph LR
+
+camelCase([camelCase])
+snake_case([snake_case])
+connected_table([connected_table])
+root([root])
+
+camelCaseTable[(camelCaseTable)]
+snake_case_table_1[(snake_case_table_1)]
+snake_case_table_2[(snake_case_table_2)]
+left_table[(left_table)]
+
+camelCase --> camelCaseTable
+snake_case --> snake_case_table_1
+snake_case --> snake_case_table_2
+connected_table --> camelCase
+connected_table --> snake_case
+connected_table --> left_table
+root --> connected_table

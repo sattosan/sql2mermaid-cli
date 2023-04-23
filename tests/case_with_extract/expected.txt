@@ -1,0 +1,9 @@
+graph LR
+
+salesData([salesData])
+root([root])
+
+sales[(sales)]
+
+salesData --> sales
+root --> salesData

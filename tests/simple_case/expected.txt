@@ -1,0 +1,7 @@
+graph LR
+
+root([root])
+
+a[(a)]
+
+root --> a

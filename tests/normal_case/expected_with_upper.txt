@@ -1,0 +1,11 @@
+graph LR
+
+bar([bar])
+changed_root_name([changed_root_name])
+
+baz[(baz)]
+foo[(foo)]
+
+bar -- FROM --> baz
+changed_root_name -- FROM --> foo
+changed_root_name -- INNER JOIN --> bar

@@ -1,0 +1,19 @@
+graph LR
+
+camelCase([camelCase])
+snake_case([snake_case])
+connected_table([connected_table])
+changed_root_name([changed_root_name])
+
+camelCaseTable[(camelCaseTable)]
+snake_case_table_1[(snake_case_table_1)]
+snake_case_table_2[(snake_case_table_2)]
+left_table[(left_table)]
+
+camelCase -- FROM --> camelCaseTable
+snake_case -- FROM --> snake_case_table_1
+snake_case -- FROM --> snake_case_table_2
+connected_table -- FROM --> camelCase
+connected_table -- LEFT JOIN --> snake_case
+connected_table -- RIGHT JOIN --> left_table
+changed_root_name -- FROM --> connected_table
