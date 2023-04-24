@@ -1,8 +1,9 @@
 from typing import Tuple
 
 import sqlparse
-from dependencies import Dependencies, Dependency
-from tables import Tables
+
+from sql2mermaid.dependencies import Dependencies, Dependency
+from sql2mermaid.tables import Tables
 
 
 def extract_leafs(tables: Tables, dependencies: Dependencies) -> Tuple[Tables, Tables]:

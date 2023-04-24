@@ -15,7 +15,7 @@ def main(
     if not sql_text:
         return
 
-    mermaid_text = mermaid.one_sql2mermaid(sql_text)
+    mermaid_text = mermaid.convert(sql_text)
     if markdown_flag:
         mermaid_text = mermaid.format_markdown(mermaid_text)
 

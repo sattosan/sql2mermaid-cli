@@ -6,6 +6,7 @@ TABLE_DELIMIT = "_dot_"
 def _sql_format(sql_text: str) -> str:
     sql_text = sql_text.replace("${", "")
     sql_text = sql_text.replace("}", "")
+    sql_text = sql_text.replace("_SESSION.", "")
     sql_text = sql_text.replace(".", TABLE_DELIMIT)
 
     return sql_text

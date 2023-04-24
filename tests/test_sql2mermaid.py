@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-import sql2mermaid
+from sql2mermaid import convert
 
 parent = Path(__file__).parent
 
@@ -14,6 +14,7 @@ parent = Path(__file__).parent
         ("normal_case"),
         ("complex_case"),
         ("case_with_extract"),
+        ("create_case"),
     ],
 )
 def test_convert(test_case: Path) -> None:
@@ -22,7 +23,7 @@ def test_convert(test_case: Path) -> None:
     with open(parent / test_case / "expected.txt", "r") as f:
         expected = f.read()
 
-    got = sql2mermaid.convert(query)
+    got = convert(query)
     assert got == expected
 
 
@@ -40,7 +41,7 @@ def test_convert_with_upper(test_case: Path) -> None:
     with open(parent / test_case / "expected_with_upper.txt", "r") as f:
         expected = f.read()
 
-    got = sql2mermaid.convert(query, root_name="changed_root_name", display_join="upper")
+    got = convert(query, root_name="changed_root_name", display_join="upper")
     assert got == expected
 
 
@@ -58,5 +59,5 @@ def test_convert_with_lower(test_case: Path) -> None:
     with open(parent / test_case / "expected_with_lower.txt", "r") as f:
         expected = f.read()
 
-    got = sql2mermaid.convert(query, root_name="changed_root_name", display_join="lower")
+    got = convert(query, root_name="changed_root_name", display_join="lower")
     assert got == expected
