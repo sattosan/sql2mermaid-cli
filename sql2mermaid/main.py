@@ -11,12 +11,7 @@ def main(
     if not input_file_path:
         return
 
-    try:
-        sql_text = file.get_sql_text(input_file_path)
-    except FileNotFoundError as e:
-        print(e)
-        return
-
+    sql_text = file.get_sql_text(input_file_path)
     if not sql_text:
         return
 
