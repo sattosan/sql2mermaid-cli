@@ -1,9 +1,8 @@
 from typing import Literal
 
-import analyze
-import file
-from dependencies import Dependencies
-from tables import Tables
+from sql2mermaid_cli import analyze, file
+from sql2mermaid_cli.dependencies import Dependencies
+from sql2mermaid_cli.tables import Tables
 
 
 def convert(query: str, root_name: str = "root", display_join: Literal["none", "upper", "lower"] = "none") -> str:

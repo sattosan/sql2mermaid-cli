@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from src import mermaid
+from sql2mermaid_cli import mermaid
 
 parent = Path(__file__).parent
 

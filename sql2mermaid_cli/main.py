@@ -1,8 +1,11 @@
-import file
-import mermaid
 import typer
 
+from sql2mermaid_cli import file, mermaid
 
+app = typer.Typer()
+
+
+@app.command()
 def main(
     input_file_path: str = typer.Option(
         None, "-i", "--input", help="Input file path."),
@@ -13,7 +16,7 @@ def main(
         None, "-d", "--display", help="Select 'upper' or 'lower' case letters for displaying joined text."),
     markdown_flag: bool = typer.Option(
         False, "-m", "--md", help="Flag to output in markdown."),
-) -> None:
+):
     if not input_file_path:
         return
 
@@ -32,4 +35,4 @@ def main(
 
 
 if __name__ == "__main__":
-    typer.run(main)
+    app()

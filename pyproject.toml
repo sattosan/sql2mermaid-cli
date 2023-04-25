@@ -7,6 +7,9 @@ readme = "README.md"
 license = "MIT"
 repository = "https://github.com/sattosan/sql2mermaid-cli"
 
+[tool.poetry.scripts]
+sql2mermaid-cli = "sql2mermaid_cli.main:app"
+
 [tool.poetry.dependencies]
 python = "^3.8.1"
 sqlparse = "^0.4.3"
@@ -55,5 +58,5 @@ ensure_newline_before_comments = true
 line_length = 128
 
 [tool.pytest.ini_options]
-pythonpath = "src"
+pythonpath = "sql2mermaid_cli"
 testpaths = ["tests",]
