@@ -1,7 +1,7 @@
 graph LR
 
 HOGE([HOGE])
-env.fuga.timestamp_suffix([env.fuga.timestamp_suffix])
+fuga([fuga])
 root([root])
 
 hoge[(hoge)]
@@ -9,7 +9,7 @@ BAR[(BAR)]
 BAZ[(BAZ)]
 
 HOGE --> hoge
-env.fuga.timestamp_suffix --> BAR
-env.fuga.timestamp_suffix --> BAZ
-env.fuga.timestamp_suffix --> HOGE
-root --> env.fuga.timestamp_suffix
+fuga --> BAR
+fuga --> BAZ
+fuga --> HOGE
+root --> fuga

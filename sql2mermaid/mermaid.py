@@ -1,14 +1,16 @@
 from typing import Literal
 
-from sql2mermaid import analyze, file
-from sql2mermaid.dependencies import Dependencies
-from sql2mermaid.tables import Tables
+import analyze
+import file
+from dependencies import Dependencies
+from tables import Tables
 
 
 def convert(query: str, root_name: str = "root", display_join: Literal["none", "upper", "lower"] = "none") -> str:
     tables, dependencies = analyze.analyze_query(query, root_name)
     internals, leafs = analyze.extract_leafs(tables, dependencies)
-    mermaid_text = _generate_mermaid(internals, leafs, dependencies, display_join)
+    mermaid_text = _generate_mermaid(
+        internals, leafs, dependencies, display_join)
     return mermaid_text
 
 
