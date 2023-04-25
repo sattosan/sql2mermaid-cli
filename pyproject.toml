@@ -55,5 +55,5 @@ ensure_newline_before_comments = true
 line_length = 128
 
 [tool.pytest.ini_options]
-pythonpath = "sql2mermaid"
+pythonpath = "src"
 testpaths = ["tests",]
