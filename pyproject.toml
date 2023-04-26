@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "sql2mermaid-cli"
 version = "1.0.0"
-description = "CLI tool to convert SQL table dependencies to mermaid.js"
+description = "CLI tool for converting SQL table dependencies to mermaid.js format."
 authors = ["sattosan <sato.yuya1211@gmail.com>"]
 readme = "README.md"
 license = "MIT"
