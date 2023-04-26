@@ -47,6 +47,20 @@ root --> foo
 root --> bar
 ```
 
+```mermaid
+graph LR
+
+bar([bar])
+root([root])
+
+baz[(baz)]
+foo[(foo)]
+
+bar --> baz
+root --> foo
+root --> bar
+```
+
 ## Options
 
 ## Author
