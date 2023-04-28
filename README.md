@@ -10,6 +10,8 @@
 ## sql2mermaid-cli
 `sql2mermaid-cli` is a CLI tool that converts SQL query into [mermaid.js](https://mermaid.js.org/) style!.
 
+![output-image](https://user-images.githubusercontent.com/20574756/235055268-3ecf0ec7-a3b7-45c3-93d9-fb032b14b4f6.gif)
+
 ## Required
 
 Python >=3.8.1
