@@ -1,4 +1,4 @@
-<img src="https://github.com/sattosan/sql2mermaid-cli/main/img/top-image.png" width="1200px">
+<img src="https://raw.githubusercontent.com/sattosan/sql2mermaid-cli/master/img/top-image.png" width="1200px">
 
 ---
 
