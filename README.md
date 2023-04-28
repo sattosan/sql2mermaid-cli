@@ -1,53 +1,45 @@
+<img src="https://github.com/sattosan/sql2mermaid-cli/main/img/top-image.png" width="1200px">
+
+---
+
 ![PyPI - License](https://img.shields.io/pypi/l/sql2mermaid)
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/nkato/sql2mermaid/python-tox.yml?event=push&label=pytest%20with%20py38)
 ![PyPI](https://img.shields.io/pypi/v/sql2mermaid)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sql2mermaid)
 
-# sql2mermaid-cli
+## sql2mermaid-cli
+`sql2mermaid-cli` is a CLI tool that converts SQL query into [mermaid.js](https://mermaid.js.org/) style!.
 
-CLI tool for converting SQL table dependencies to [mermaid.js](https://mermaid.js.org/) style!.
-
-# Required
+## Required
 
 Python >=3.8.1
 
 ## Installation
 
+To install sql2mermaid-cli, use the following command:
+
 ```bash
-$ pip install sql2mermaid-cli
+$ pip install git+https://github.com/sattosan/sql2mermaid-cli.git
 ```
 
 ## Getting Started
 
-Create sample sql file.
+As a preparation, create a sample SQL file.
 
 ```bash
-$ touch query.sql
-
-# write sql file
 $ echo "with bar as (select * from baz)\n\
-select * from foo inner join bar on foo.id = bar.id\n"> query.sql
+select * from foo inner join bar on foo.id = bar.id\n"> input.sql
 ```
+
+The basic usage of `sql2mermaid-cli` is as follows:
 
 ```bash
-$ sql2mermaid-cli -i query.sql
+$ sql2mermaid-cli -i input.sql
 ```
+
+This will output the mermaid diagram to the console:
 
 ```bash
-graph LR
-
-bar([bar])
-root([root])
-
-baz[(baz)]
-foo[(foo)]
-
-bar --> baz
-root --> foo
-root --> bar
-```
-
-```mermaid
 graph LR
 
 bar([bar])
@@ -62,6 +54,42 @@ root --> bar
 ```
 
 ## Options
+
+To save the output to a file, use the -o option followed by the path to the output file:
+
+```bash
+$ sql2mermaid-cli -i input.sql -o output.txt
+```
+
+By default, the output format is plain text. To output the mermaid diagram in markdown format, use the -m option:
+
+```bash
+$ sql2mermaid-cli -i input.sql -o output.md -m
+```
+
+You can also specify either "upper" or "lower" after the -d option to display the join type of SQL in the mermaid diagram.
+
+```bash
+$ sql2mermaid-cli -i input.sql -d upper
+```
+
+This will output the mermaid diagram to the console:
+
+```bash
+graph LR
+
+bar([bar])
+foo([foo])
+
+root[(root)]
+baz[(baz)]
+foo.id[(foo.id)]
+bar.id[(bar.id)]
+
+bar -- FROM --> baz
+bar -- FROM --> foo
+foo -- INNER JOIN --> bar
+```
 
 ## Author
 
