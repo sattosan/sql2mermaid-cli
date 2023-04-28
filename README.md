@@ -55,6 +55,11 @@ root --> foo
 root --> bar
 ```
 
+The Mermaid diagram that is outputted can be visualized on the Mermaid Live Editor website.
+
+[Mermaid Live Editor](https://mermaid.live/)
+
+
 ## Options
 
 To save the output to a file, use the -o option followed by the path to the output file:
