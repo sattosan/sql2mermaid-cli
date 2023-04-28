@@ -21,7 +21,7 @@ Python >=3.8.1
 To install sql2mermaid-cli, use the following command:
 
 ```bash
-$ pip install git+https://github.com/sattosan/sql2mermaid-cli.git
+$ pip install sql2mermaid-cli
 ```
 
 ## Getting Started
